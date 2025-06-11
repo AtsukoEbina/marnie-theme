@@ -1,6 +1,6 @@
 <section class="hero">
     <div class="container">
-        <h2>自然と暮らす、日々の美しさを。</h2>
-        <p>Instagramの世界を、あなたのWebにも。</p>
+        <h2>ただ「Kawaii」世界</h2>
+        <p>誰かの心が少しでも癒されますように</p>
     </div>
 </section>
