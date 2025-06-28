@@ -1,6 +1,6 @@
-<section class="instagram-preview">
+<section class="instagram-section">
     <div class="container">
-        <h3>Instagramから</h3>
+        <h2>Masterpieces</h2>
         <div class="instagram-grid">
 
             <div class="instagram-item">
