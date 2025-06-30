@@ -25,6 +25,11 @@
             </div>
 
         </div>
+        <div class="instagram-button-wrapper">
+            <a class="btn-view-gallery" href="<?php echo home_url('/gallery'); ?>">
+                その他Galleryはこちら
+            </a>
+        </div>
 
         <script async src="//www.instagram.com/embed.js"></script>
     </div>
