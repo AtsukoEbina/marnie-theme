@@ -45,3 +45,5 @@ function marnie_enqueue_fonts()
     );
 }
 add_action('wp_enqueue_scripts', 'marnie_enqueue_fonts');
+
+add_theme_support('post-thumbnails');

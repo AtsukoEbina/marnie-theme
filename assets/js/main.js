@@ -38,3 +38,31 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.classList.toggle("open");
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("modal-overlay");
+  const modalImg = document.getElementById("modal-image");
+  const modalClose = document.querySelector(".modal-close");
+
+  document.querySelectorAll(".modal-trigger").forEach(imgLink => {
+    imgLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      const imgSrc = this.getAttribute("href");
+      modalImg.src = imgSrc;
+      modal.style.display = "flex";
+    });
+  });
+
+  modalClose.addEventListener("click", function () {
+    modal.style.display = "none";
+    modalImg.src = "";
+  });
+
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      modalImg.src = "";
+    }
+  });
+});
+
