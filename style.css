@@ -268,7 +268,7 @@ body {
     display: inline-block;
     margin-top: 1rem;
     padding: 0.6rem 1.2rem;
-    background-color: #333;
+    background-color: #ff6699;
     color: #fff;
     text-decoration: none;
     border-radius: 4px;
@@ -375,3 +375,162 @@ body.loaded footer {
     opacity: 0;
     pointer-events: none;
   }
+
+/* ------------------------------
+   Galleryページ用
+------------------------------ */
+.gallery-page {
+  padding: 3rem 1rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-image img {
+  width: 220px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.gallery-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.gallery-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.gallery-info a {
+  color: #e4405f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gallery-info a:hover {
+  text-decoration: underline;
+}
+
+.instagram-button-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-view-gallery {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: #ff6699;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.btn-view-gallery:hover {
+  background-color: #ff3366;
+}
+
+
+/* Galleryカード：モバイル対応 */
+@media screen and (max-width: 768px) {
+  .gallery-card {
+    flex-direction: column;
+  }
+
+  .gallery-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* モーダル表示用 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+/* ------------------------------
+   Contactページ用
+------------------------------ */
+
+.google-form-wrapper {
+  padding: 2rem 0;
+}
