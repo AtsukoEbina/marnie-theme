@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 
-<h1>ようこそ、Marnieのギャラリーへ</h1>
-<p>Instagramの投稿を活かしたポートフォリオです。</p>
+<main class="main-content">
+    <?php get_template_part('template-parts/content-hero'); ?>
+    <?php get_template_part('template-parts/content-about'); ?>
+    <?php get_template_part('template-parts/content-instagram'); ?>
+</main>
 
 <?php get_footer(); ?>

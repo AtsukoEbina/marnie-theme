@@ -1,6 +1,536 @@
 /*
 Theme Name: Marnie Theme
-Author: あなたの名前
+Author: AtsukoEbina
 Description: Instagram連携のオリジナルテーマ
 Version: 1.0
 */
+
+/* ------------------------------
+  共通スタイル
+------------------------------ */
+
+body {
+    margin: 0;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    background: #fff;
+    color: #333;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 0;
+  }
+  
+/* ------------------------------
+   ヘッダー
+------------------------------ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: #fff;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+/* ロゴ */
+.site-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+/* ナビゲーション（中央寄せ） */
+.site-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.header-menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-menu li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.header-menu li a:hover {
+  color: #ff6699;
+}
+
+/* インスタリンク */
+.insta-link img {
+  width: 24px;
+  height: 24px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+.insta-link img:hover {
+  transform: scale(1.1);
+}
+
+/* 右側アクション（インスタ + ハンバーガー） */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ハンバーガー */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+}
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* モバイル用メニュー表示切替 */
+@media screen and (max-width: 768px) {
+  .header-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 1001;
+  }
+
+  .header-menu.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+  
+  /* ------------------------------
+    ヒーローセクション
+  ------------------------------ */
+
+  .hero {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .hero-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease-in-out;
+    z-index: 0;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 1rem;
+  }
+  
+  .hero-content h2,
+.hero-content p {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 縁取り風シャドウ */
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1rem;
+}
+
+  
+  /* ------------------------------
+    Instagramセクション
+  ------------------------------ */
+  
+  .instagram-section {
+    background: #fff;
+    padding: 3rem 1rem;
+    text-align: center;
+  }
+  
+  .instagram-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .instagram-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1rem 0;
+    gap: 1rem;
+  }
+  
+  .instagram-item {
+    width: 30%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  
+  /* ------------------------------
+    Aboutセクション
+  ------------------------------ */
+  
+  .about-section {
+    padding: 3rem 1rem;
+    background-color: #fdfaf6;
+  }
+  
+  .about-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .about-content img {
+    width: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+  }
+  
+  .about-text {
+    flex: 1;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .about-text .btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    background-color: #ff6699;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .about-text .btn:hover {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+  
+  /* ------------------------------
+    メディアクエリ（スマホ対応）
+  ------------------------------ */
+  
+  @media screen and (max-width: 768px) {
+    .instagram-item {
+      width: 100%;
+      padding: 0;
+    }
+  
+    .about-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .about-content img {
+      width: 150px;
+    }
+  
+    .about-text .btn {
+      margin-top: 1rem;
+    }
+  
+    .instagram-section {
+      padding: 1rem;
+    }
+  }
+  
+    /* ------------------------------
+    ローディング表示
+  ------------------------------ */
+  
+body.loading main,
+body.loading footer {
+  opacity: 0;
+}
+
+body.loaded main,
+body.loaded footer {
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .spinner {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: spin 1.2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }  
+
+  #loading-screen {
+    transition: opacity 0.5s ease;
+    opacity: 1;
+  }
+  
+  body.loaded #loading-screen {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+/* ------------------------------
+   Galleryページ用
+------------------------------ */
+.gallery-page {
+  padding: 3rem 1rem;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.gallery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.gallery-card {
+  display: flex;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-image img {
+  width: 220px;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-info {
+  padding: 1.5rem;
+  flex: 1;
+}
+
+.gallery-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.gallery-description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+.gallery-info a {
+  color: #e4405f;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.gallery-info a:hover {
+  text-decoration: underline;
+}
+
+.instagram-button-wrapper {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn-view-gallery {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  background-color: #ff6699;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.btn-view-gallery:hover {
+  background-color: #ff3366;
+}
+
+
+/* Galleryカード：モバイル対応 */
+@media screen and (max-width: 768px) {
+  .gallery-card {
+    flex-direction: column;
+  }
+
+  .gallery-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* モーダル表示用 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80%;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  color: #333;
+  font-size: 1.4rem;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 0;
+}
+
+/* ------------------------------
+   Contactページ用
+------------------------------ */
+
+.google-form-wrapper {
+  padding: 2rem 0;
+}
