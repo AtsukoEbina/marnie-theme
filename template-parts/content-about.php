@@ -1,4 +1,4 @@
-<section class="about-section">
+<section id="about" class="about-section">
     <div class="container">
         <h2>About Marnie</h2>
         <div class="about-content">
