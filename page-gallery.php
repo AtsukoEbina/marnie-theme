@@ -5,7 +5,7 @@ get_header(); ?>
 <main class="gallery-page container">
     <h2 class="gallery-title">Gallery</h2>
 
-    <div class="gallery-list">
+    <div class="gallery-list fade-in">
         <?php
         $gallery_query = new WP_Query(array(
             'post_type' => 'post',

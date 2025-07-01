@@ -8,9 +8,15 @@ window.addEventListener('load', function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  const fadeSections = document.querySelectorAll(".fade-in");
+  fadeSections.forEach(section => {
+    section.classList.add("show");
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const heroBg = document.querySelector(".hero-background");
 
-  // スライド用画像（お好みで差し替えてね）
   const images = [
     "/assets/img/Yarnandflower.jpg",
     "/assets/img/チューリップ.JPG",
