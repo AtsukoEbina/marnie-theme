@@ -308,7 +308,7 @@ body {
     }
   }
   
-    /* ------------------------------
+  /* ------------------------------
     ローディング表示
   ------------------------------ */
   
@@ -374,6 +374,16 @@ body.loaded footer {
   body.loaded #loading-screen {
     opacity: 0;
     pointer-events: none;
+  }
+
+  .fade-in {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+  }
+  .fade-in.show {
+    opacity: 1;
+    visibility: visible;
   }
 
 /* ------------------------------
